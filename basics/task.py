@@ -24,7 +24,7 @@ for i in range(1, 11):
     print(num * i)
     count += 1
 print(count)
-
+ 
 # take a number and reverse it 
 number = int(input("enter a number: "))
 reverse = 0
