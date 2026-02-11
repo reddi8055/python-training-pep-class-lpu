@@ -1,0 +1,166 @@
+Here is a professional **README.md** file for your project:
+
+---
+
+# 💰 Personal Finance Tracker (CLI-Based)
+
+## 📌 Project Overview
+
+The **Personal Finance Tracker** is a Python-based Command Line Interface (CLI) application built using **SQLAlchemy ORM** and **SQLite**.
+
+It helps users manage:
+
+* Categories
+* Transactions
+* Budgets
+* Subscriptions
+
+The system allows tracking expenses, setting monthly budgets, and generating budget alerts when limits are exceeded.
+
+---
+
+## 🚀 Features
+
+* ✅ Add, update, delete transactions
+* 📅 Search transactions by date
+* 📊 Category-wise expense summary
+* 💵 Set monthly budgets
+* 🚨 Budget alert system
+* 🔁 Manage subscriptions
+* 🗂 Relational database using SQLAlchemy ORM
+
+---
+
+## 🛠 Technologies Used
+
+* **Language:** Python
+* **Database:** SQLite
+* **ORM:** SQLAlchemy
+* **Interface:** Command Line Interface (CLI)
+
+---
+
+## 🗄 Database Schema
+
+### 1️⃣ Categories Table
+
+* `id` (Primary Key)
+* `name`
+* One-to-Many relationship with:
+
+  * Transactions
+  * Budgets
+
+### 2️⃣ Transactions Table
+
+* `id` (Primary Key)
+* `amount`
+* `description`
+* `date`
+* `category_id` (Foreign Key → Categories)
+
+### 3️⃣ Budgets Table
+
+* `id` (Primary Key)
+* `category_id` (Foreign Key → Categories)
+* `month`
+* `budget_limit`
+
+### 4️⃣ Subscriptions Table
+
+* `id` (Primary Key)
+* `name`
+* `amount`
+* `start_date`
+* `end_date`
+
+---
+
+## 🧠 How It Works
+
+1. The application uses SQLAlchemy to map Python classes to database tables.
+2. Users interact via CLI menu options.
+3. Transactions are linked to categories using foreign keys.
+4. Budgets are set monthly per category.
+5. The system calculates total spending per category and compares it with the budget.
+6. If spending exceeds the limit, a budget alert is triggered.
+
+---
+
+## 📂 Project Structure
+
+```
+finance_tracker/
+│
+├── main.py
+├── finance_tracker.db
+└── README.md
+```
+
+---
+
+## ▶️ How to Run the Project
+
+### Step 1: Install Dependencies
+
+```bash
+pip install sqlalchemy
+```
+
+### Step 2: Run the Application
+
+```bash
+python main.py
+```
+
+The database file `finance_tracker.db` will be created automatically.
+
+---
+
+## 📋 Menu Options
+
+```
+1. Add Category
+2. Add Transaction
+3. Update Transaction
+4. Delete Transaction
+5. Search Transaction by Date
+6. Category Summary
+7. Set Budget
+8. Budget Alert
+9. Add Subscription
+0. Exit
+```
+
+---
+
+## 📊 Example Use Case
+
+* Create categories like **Food**, **Travel**, **Shopping**
+* Add daily expenses
+* Set a monthly budget for each category
+* Check if you exceeded your spending limit
+* Manage recurring subscriptions like Netflix, Spotify, etc.
+
+---
+
+## 🎯 Learning Outcomes
+
+* Understanding SQLAlchemy ORM
+* Working with relationships (One-to-Many)
+* Using Foreign Keys
+* Writing raw SQL queries inside SQLAlchemy
+* Implementing CRUD operations
+* Building CLI-based database applications
+
+---
+
+## 🔮 Future Enhancements
+
+* Add income tracking
+* Add graphical reports using Matplotlib
+* Export reports to CSV
+* Add user authentication
+* Convert CLI to Web App (Flask/Django)
+
+---
